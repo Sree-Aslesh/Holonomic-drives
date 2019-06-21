@@ -11,7 +11,7 @@ By alternating wheels with left and right-handed rollers, in such a way that eac
 
 
 <p align="center">
-  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/Mecanum_Wheel_Installation_02.png">
+  <img width="400" height="400" src="/Mecanum%20Drive/Illustrations/Mecanum_Wheel_Installation_02.png">
 </p>
 
 Moving all four wheels in the same direction causes forward or backward movement, running the wheels on one side in the opposite direction to those on the other side causes rotation of the vehicle, and running the wheels on one diagonal in the opposite direction to those on the other diagonal causes sideways movement. Combinations of these wheel motions allow for vehicle motion in any direction with any vehicle rotation (including no rotation at all).
@@ -31,13 +31,13 @@ Kinematics - Calculation of the resultant motion from many forces being applied 
 Inverse kinematics - Calculation of individial exerted force from the resultant
 
 <p align="center">
-  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/Derivation.PNG">
+  <img width="800" height="800" src="/Mecanum%20Drive/Illustrations/Derivation.PNG">
 </p>
 
 And from this the final Inverse-Kinematic equations come out to be 
 
 <p align="center">
-  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/final%20equations.PNG">
+  <img width="800" height="600" src="/Mecanum%20Drive/Illustrations/final%20equations.PNG">
 </p>
 
 These equations can be used to manipulate the velocity and position of the drive. The code for the drive implementation can be found in this repository. These code have been written for Arduino Mega 2560. They can be changed by a few tweaks according to the board you are using.
