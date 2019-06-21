@@ -2,15 +2,24 @@
   
 The Mecanum wheel is a design for a wheel that can move a vehicle in any direction. It is a conventional wheel with a series of rollers attached to its circumference. These rollers typically each have an axis of rotation at 45° to the plane of the wheel and at 45° to a line through the centre of the roller parallel to the axis of rotation of the wheel.
 
-![Mecanum wheels](/Mecanum%20Drive/Illustrations/LeftAndRight_Mecanum_Wheel.png)
+<p align="center">
+  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/LeftAndRight_Mecanum_Wheel.png">
+</p>
+
 
 By alternating wheels with left and right-handed rollers, in such a way that each wheel applies force roughly at right angles to the wheelbase diagonal the wheel is on, the vehicle is stable and can be made to move in any direction and turn by varying the speed and direction of rotation of each wheel.
 
-![Mecanum wheel arrangement](/Mecanum%20Drive/Illustrations/Mecanum_Wheel_Installation_02.png)
+
+<p align="center">
+  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/Mecanum_Wheel_Installation_02.png">
+</p>
 
 Moving all four wheels in the same direction causes forward or backward movement, running the wheels on one side in the opposite direction to those on the other side causes rotation of the vehicle, and running the wheels on one diagonal in the opposite direction to those on the other diagonal causes sideways movement. Combinations of these wheel motions allow for vehicle motion in any direction with any vehicle rotation (including no rotation at all).
 
-![Mecanum wheel combinations](/Mecanum%20Drive/Illustrations/wheel-rotations.jpg)
+<p align="center">
+  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/wheel-rotations.jpg">
+</p>
+
 
 # Kinematics
 
@@ -21,12 +30,14 @@ Kinematics - Calculation of the resultant motion from many forces being applied 
 
 Inverse kinematics - Calculation of individial exerted force from the resultant
 
-![derivation](/Mecanum%20Drive/Illustrations/Derivation.PNG) 
+<p align="center">
+  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/Derivation.PNG">
+</p>
 
 And from this the final Inverse-Kinematic equations come out to be 
 
-
-![final equations](/Mecanum%20Drive/Illustrations/final%20equations.PNG)
-
+<p align="center">
+  <img width="460" height="300" src="/Mecanum%20Drive/Illustrations/final%20equations.PNG">
+</p>
 
 These equations can be used to manipulate the velocity and position of the drive. The code for the drive implementation can be found in this repository. These code have been written for Arduino Mega 2560. They can be changed by a few tweaks according to the board you are using.
