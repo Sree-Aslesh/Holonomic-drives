@@ -1,4 +1,4 @@
-
+#include <XBOXOLD.h>
 // Satisfy the IDE, which needs to see the include statment in the ino too.
 #ifdef dobogusinclude
 #include <spi4teensy3.h>
@@ -6,7 +6,6 @@
 #include <SPI.h>
 
 USB Usb;
-USBHub  Hub1(&Usb); // The controller has a built in hub, so this instance is needed
 XBOXOLD Xbox(&Usb);
 
 
@@ -30,28 +29,18 @@ int m4_pwm  = 5;
 
 //---------------------
 
-int encoder1 = 18;
-int encoder2 = 19;
-int encoder3 = 20;           // encoder connections
-int encoder4 = 21;
-
-//---------------------
 
 String val;
+int Lefthat_x=0,Lefthat_y=0,Righthat_x=0,Righthat_y=0;
 
 void setup() {
   Serial.begin(115200);
   
   for(int i=2;i<=5;i++)
-    pinMode(i,OUTPUT)
+    pinMode(i,OUTPUT);
   for(int i=22;i<=29;i++)
-    pinMode(i,OUTPUT)
-  for(int i=18;i<=21;i++)
-    {
-      pinMode(i,INPUT_PULLUP)
-      val = isr_m + (i-17);
-      attachInterrupt(i, val ,RISING)
-    }
+    pinMode(i,OUTPUT);
+
     
 #if !defined(__MIPSEL__)
   while (!Serial); // Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection
@@ -113,10 +102,11 @@ void loop() {
 void Set_velocity(int vx, int vy, int rx)
 {
   
-  int v1,v2,v3,v4,vtheta,theta;
+  int v1,v2,v3,v4,vtheta,theta,v;
+  const float pi = 3.14;
 
-  rx = vtheta;
-  v = sqrt(vx^2 + vy^2);
+  vtheta = rx;
+  v = sqrt(sq(vx) + sq(vy));
   theta = atan2(vy,vx);
   
   v1 = v*sin(theta + pi/4) + vtheta;
@@ -134,7 +124,36 @@ void Set_velocity(int vx, int vy, int rx)
     digitalWrite(m1_dir1,LOW);
     digitalWrite(m1_dir2,HIGH);    
     }
-
+  if (v2>=0)
+  {
+    digitalWrite(m2_dir1,HIGH);
+    digitalWrite(m2_dir2,LOW);
+    }
+  else
+  {
+    digitalWrite(m2_dir1,LOW);
+    digitalWrite(m2_dir2,HIGH);    
+    }
+  if (v3>=0)
+  {
+    digitalWrite(m3_dir1,HIGH);
+    digitalWrite(m3_dir2,LOW);
+    }
+  else
+  {
+    digitalWrite(m3_dir1,LOW);
+    digitalWrite(m3_dir2,HIGH);    
+    }
+  if (v4>=0)
+  {
+    digitalWrite(m4_dir1,HIGH);
+    digitalWrite(m4_dir2,LOW);
+    }
+  else
+  {
+    digitalWrite(m4_dir1,LOW);
+    digitalWrite(m4_dir2,HIGH);    
+    }
   analogWrite(m1_pwm, v1);
   analogWrite(m2_pwm, v2);
   analogWrite(m3_pwm, v3);

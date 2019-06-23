@@ -1,7 +1,3 @@
-#include <avr/interrupt.h>
-#include <stdlib.h>
-#include <Timer.h>
-
 #include <XBOXRECV.h>
 
 // Satisfy the IDE, which needs to see the include statment in the ino too.
